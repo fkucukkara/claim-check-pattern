@@ -1,0 +1,21 @@
+### ClaimCheckPlayground — Processor API Test Requests
+### Run the Aspire AppHost first, then update the port numbers and claim token below.
+### Copy a claimToken value from a successful POST /orders response (Producer).
+
+@ProcessorBaseUrl = https://localhost:49954
+
+# Replace the token below with a real value from POST /orders
+@ClaimToken = 84b8617dc4b74e34a10c2697157c1361
+
+# ── Poll order status ──────────────────────────────────────────────────────
+# Expected: 200 OK with status: pending | processing | fulfilled | failed
+# Poll every few seconds after submitting an order to watch the lifecycle.
+GET {{ProcessorBaseUrl}}/orders/{{ClaimToken}}/status
+
+###
+
+# ── Unknown claim token ───────────────────────────────────────────────────
+# Expected: 404 Not Found
+GET {{ProcessorBaseUrl}}/orders/00000000000000000000000000000000/status
+
+###

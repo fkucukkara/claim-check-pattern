@@ -1,0 +1,67 @@
+### ClaimCheckPlayground — Producer API Test Requests
+### Run the Aspire AppHost first, then update the port numbers below.
+### Use Visual Studio "Endpoints Explorer" or the VS Code REST Client extension.
+
+@ProducerBaseUrl = https://localhost:49955
+
+# ── Submit a simple order ─────────────────────────────────────────────────
+# Expected: 202 Accepted  { claimToken, orderId }
+POST {{ProducerBaseUrl}}/orders
+Content-Type: application/json
+
+{
+  "customerId": "customer-42",
+  "items": [
+    { "productId": "SKU-001", "quantity": 2, "unitPrice": 29.99 },
+    { "productId": "SKU-005", "quantity": 1, "unitPrice": 149.00 }
+  ],
+  "shippingAddress": {
+    "street": "123 Main St",
+    "city": "Seattle",
+    "postalCode": "98101",
+    "country": "US"
+  }
+}
+
+###
+
+# ── Submit an order with multiple items ───────────────────────────────────
+# Demonstrates that any payload size fits the pattern without touching SB limits.
+POST {{ProducerBaseUrl}}/orders
+Content-Type: application/json
+
+{
+  "customerId": "enterprise-corp",
+  "items": [
+    { "productId": "SKU-010", "quantity": 100, "unitPrice": 4.99 },
+    { "productId": "SKU-020", "quantity": 50,  "unitPrice": 9.99 },
+    { "productId": "SKU-030", "quantity": 20,  "unitPrice": 24.99 },
+    { "productId": "SKU-040", "quantity": 5,   "unitPrice": 199.99 }
+  ],
+  "shippingAddress": {
+    "street": "1 Enterprise Blvd",
+    "city": "New York",
+    "postalCode": "10001",
+    "country": "US"
+  }
+}
+
+###
+
+# ── Validation error — no items ───────────────────────────────────────────
+# Expected: 400 Bad Request  { errors: { Items: [...] } }
+POST {{ProducerBaseUrl}}/orders
+Content-Type: application/json
+
+{
+  "customerId": "customer-99",
+  "items": [],
+  "shippingAddress": {
+    "street": "99 Empty St",
+    "city": "Portland",
+    "postalCode": "97201",
+    "country": "US"
+  }
+}
+
+###

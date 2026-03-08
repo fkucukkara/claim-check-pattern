@@ -1,0 +1,22 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.1.2">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>e7a055d2-d907-472e-9ba6-af7dcae418d8</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Azure hosting integrations for Aspire AppHost -->
+    <PackageReference Include="Aspire.Hosting.Azure.ServiceBus" Version="13.1.2" />
+    <PackageReference Include="Aspire.Hosting.Azure.Storage" Version="13.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClaimCheckPlayground.Producer\ClaimCheckPlayground.Producer.csproj" />
+    <ProjectReference Include="..\ClaimCheckPlayground.Processor\ClaimCheckPlayground.Processor.csproj" />
+  </ItemGroup>
+
+</Project>
