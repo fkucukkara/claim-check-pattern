@@ -4,20 +4,17 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UserSecretsId>producer-claim-check-demo</UserSecretsId>
+    <UserSecretsId>processor-claim-check-demo</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Aspire client integrations — inject BlobServiceClient / ServiceBusClient via DI -->
+    <!-- Aspire client integrations -->
     <PackageReference Include="Aspire.Azure.Messaging.ServiceBus" Version="13.4.6" />
     <PackageReference Include="Aspire.Azure.Storage.Blobs" Version="13.4.6" />
 
     <!-- OpenAPI + Scalar UI -->
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
     <PackageReference Include="Scalar.AspNetCore" Version="2.16.17" />
-
-    <!-- Pinned transitive dependencies to fix vulnerabilities -->
-    <PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
   </ItemGroup>
 
   <ItemGroup>

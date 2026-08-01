@@ -12,9 +12,6 @@
     <!-- Azure hosting integrations for Aspire AppHost -->
     <PackageReference Include="Aspire.Hosting.Azure.ServiceBus" Version="13.4.6" />
     <PackageReference Include="Aspire.Hosting.Azure.Storage" Version="13.4.6" />
-
-    <!-- Pinned transitive dependencies to fix vulnerabilities -->
-    <PackageReference Include="Azure.ResourceManager" Version="1.14.0" />
   </ItemGroup>
 
   <ItemGroup>

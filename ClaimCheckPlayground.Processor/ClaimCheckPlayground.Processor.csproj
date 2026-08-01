@@ -9,12 +9,15 @@
 
   <ItemGroup>
     <!-- Aspire client integrations -->
-    <PackageReference Include="Aspire.Azure.Messaging.ServiceBus" Version="13.1.2" />
-    <PackageReference Include="Aspire.Azure.Storage.Blobs" Version="13.1.2" />
+    <PackageReference Include="Aspire.Azure.Messaging.ServiceBus" Version="13.4.6" />
+    <PackageReference Include="Aspire.Azure.Storage.Blobs" Version="13.4.6" />
 
     <!-- OpenAPI + Scalar UI -->
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
-    <PackageReference Include="Scalar.AspNetCore" Version="2.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.16.17" />
+
+    <!-- Pinned transitive dependencies to fix vulnerabilities -->
+    <PackageReference Include="Microsoft.OpenApi" Version="2.7.5" />
   </ItemGroup>
 
   <ItemGroup>
