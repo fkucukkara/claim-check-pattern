@@ -1,7 +1,11 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="README.md" />
+  </Folder>
   <Project Path="ClaimCheckPlayground.AppHost/ClaimCheckPlayground.AppHost.csproj" />
-  <Project Path="ClaimCheckPlayground.ServiceDefaults/ClaimCheckPlayground.ServiceDefaults.csproj" />
   <Project Path="ClaimCheckPlayground.Contracts/ClaimCheckPlayground.Contracts.csproj" />
-  <Project Path="ClaimCheckPlayground.Producer/ClaimCheckPlayground.Producer.csproj" />
   <Project Path="ClaimCheckPlayground.Processor/ClaimCheckPlayground.Processor.csproj" />
+  <Project Path="ClaimCheckPlayground.Producer/ClaimCheckPlayground.Producer.csproj" />
+  <Project Path="ClaimCheckPlayground.ServiceDefaults/ClaimCheckPlayground.ServiceDefaults.csproj" />
 </Solution>
